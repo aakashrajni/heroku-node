@@ -13,7 +13,7 @@ var text,texts;
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 5000;
 
 // Log all requests
 app.use(logger('dev'));
