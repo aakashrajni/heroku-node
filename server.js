@@ -13,7 +13,7 @@ var text,texts;
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
 // Log all requests
 app.use(logger('dev'));
@@ -111,11 +111,8 @@ setTimeout(function2, 1000);
 });
 
 // Route for everything else.
-app.get('*', function(req, res){
+app.get('/', function(req, res){
 	res.sendFile(path.join(__dirname + '/public/sample.html'));
-
-	
-  
 });
 
 app.listen(port, function() {
