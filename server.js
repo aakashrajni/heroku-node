@@ -227,6 +227,7 @@ setTimeout(function2, 1);
 
 // Route for everything else.
 app.get('/', function(req, res){
+	fs.unlinkSync('Merge.pdf');
 	res.sendFile(path.join(__dirname + '/public/sample.html'));
 });
 
