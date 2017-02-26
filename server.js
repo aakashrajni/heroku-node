@@ -247,7 +247,12 @@ setTimeout(function2, 1);
 
 // Route for everything else.
 app.get('/', function(req, res){
+	fs.stat('Merge.pdf', function(err, stat) {
+    if(err == null) {
+        console.log('File exists');	
 	fs.unlinkSync('Merge.pdf');
+	}
+});
 	res.sendFile(path.join(__dirname + '/public/sample.html'));
 });
 
