@@ -171,6 +171,9 @@ app.get("/pdf", function(req, res) {
      		res.contentType("application/pdf");
      		res.send(data);
 });
+		pno.forEach(function(value){
+		fs.unlinkSync('Modified' + value +'.pdf');
+	})
 });
 
 
