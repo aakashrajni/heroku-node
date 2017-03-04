@@ -228,8 +228,11 @@ req.files.sampleFile.mv('try.pdf', function(err) {
 		for(var i=0;i<fnlen;i++)
 		{
 			pno.push(i);
-			console.log(pno);
 		}
+		for(var i=0;i<25;i++)
+			if(regnofn[Math.max.apply(null,pno)*25+i] == undefined)
+				regnofn[Math.max.apply(null,pno)*25+i] = ""; 
+				 
 }
 setTimeout(function2, 1);
 });
