@@ -36,128 +36,128 @@ app.get("/pdf", function(req, res) {
 		const context = pageModifier.getContext();
 		context.writeText(
 			regnofn[value*25+0],
-			110, 460,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			170, 260,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+1],
-			280, 460,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			170, 205,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+2],
-			460, 460,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			170, 146,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+3],
-			640, 460,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			170, 233,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+4],
-			110, 410,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			170, 175,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+5],
-			280, 410,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			295, 260,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+6],
-			460, 410,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			295, 205,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+7],
-			640, 410,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			295, 146,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+8],
-			110, 350,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			295, 233,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+9],
-			280, 350,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			295, 175,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+10],
-			460, 350,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			425, 260,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+11],
-			640, 350,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			425, 205,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+12],
-			110, 295,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			425, 146,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+13],
-			280, 295,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			425, 233,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+14],
-			460, 295,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			420, 175,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+15],
-			640, 300,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			555, 260,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+16],
-			110, 230,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			555, 205,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+17],
-			280, 230,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			555, 146,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+18],
-			460, 230,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			555, 233,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+19],
-			110, 170,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			555, 175,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+20],
-			280, 170,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			685, 260,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+21],
-			460, 170,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			685, 205,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+22],
-			110, 110,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			685, 146,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+23],
-			280, 110,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			685, 233,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
 			regnofn[value*25+24],
-			460, 110,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:14,colorspace:'black',color:'black'}
+			685, 175,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		pageModifier.endContext().writePage();
 		pdfWriter.end();
@@ -198,9 +198,11 @@ req.files.sampleFile.mv('try.pdf', function(err) {
     if (err) return console.log(err);
     pdf2table.parse(buffer, function (err, rows, rowsdebug) {
         if(err) return console.log(err);
+	console.log(rows);
 	fs.writeFile('tried.txt',rows);
 	function function2() {
 	 text = fs.readFileSync('tried.txt').toString().split(",") 
+	console.log(text);
 	text.forEach(function(value){
 		if(value.length == 2 && value == "FN")
 		{	
