@@ -1,0 +1,30 @@
+<html>
+  <body>
+    <form ref='pdfForm' 
+      id='pdfForm' 
+      action='/pdf' 
+      method='post' 
+      encType="multipart/form-data">
+      <h3>Number of Required Halls for FN:</h3><%= nfn %>
+      <h3>Examination Hall for FN</h3>
+	<ul style="list-style: none;"><li style='padding-bottom:10px'><input type="text" name="ehf"/></li>
+	<input type="button" value="Add Field" id="bbut"/></ul>
+	<h3>Number of Required Halls for AN:</h3><%= nan %>
+	<h3>Examination Hall for AN</h3>
+	<ul style="list-style: none;"><li style='padding-bottom:10px'><input type="text" name="eha"/></li>
+	<input type="button" value="Add Field" id="bbut2"/></ul>
+        <input type='submit' value='Get_PDF!' />
+    </form>     
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $('#bbut').click(function(){
+            $( "#bbut" ).before("<li style='padding-bottom:10px'><input type='text' name='ehf'/></li>");
+	   });
+	  $('#bbut2').click(function(){
+            $( "#bbut2" ).before("<li style='padding-bottom:10px'><input type='text' name='eha'/></li>");
+	   });
+        });
+        </script>
+  </body>
+</html>
