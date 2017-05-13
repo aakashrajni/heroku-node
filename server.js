@@ -346,12 +346,20 @@ app.post("/pdf", function(req, res) {
 	        pno.forEach(function(value){
 		fs.stat('Modified' + value +'.pdf', function(err, stat) {
     		if(err == null) {
-        	console.log('File exists');
 		fs.unlinkSync('Modified' + value +'.pdf'); }
+	}) });
+		ano.forEach(function(value){
+		fs.stat('Modifieda' + value +'.pdf', function(err, stat) {
+    		if(err == null) {
+        	console.log('File exists');
+		fs.unlinkSync('Modifieda' + value +'.pdf'); }
 	}) });
 	regnofn = [];
 	regnoan = [];
 	pno = [];
+	ano = [];
+	fnlen = null;
+	anlen = null;
 });
 
 
@@ -377,7 +385,6 @@ req.files.sampleFile.mv('try.pdf', function(err) {
 		if(value.length == 11)
 		{
 			date = value;
-			console.log(value);
 		}
 		if(value.length == 2 && value == "FN")
 		{	
