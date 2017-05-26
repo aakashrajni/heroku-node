@@ -402,6 +402,8 @@ app.post("/pdf", function(req, res) {
 	}) });
 	regnofn = [];
 	regnoan = [];
+	regnofnf = [];
+	regnoanf = [];
 	pno = [];
 	ano = [];
 	fnlen = null;
