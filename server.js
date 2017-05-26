@@ -9,13 +9,21 @@ var fs = require('fs'),
         pdf2json = require("pdf2json");
             var pdf2table = require("pdf2table");
 var hummus = require("hummus");
+var shuffle = require('shuffle-array');
 var text,texts;
 var regnofn = [];
 var regnoan = [];
 var j,fnlen,anlen;
 var pno = [];
 var ano = [];
+var cse = [];
+var ece = [];
+var eee = [];
+var mech = [];
+var regnofnf = [];
+var regnoanf = [];
 var date,ehfn,ehan;
+var nosph,nospha;
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
 var port = process.env.PORT || 5000;
@@ -52,130 +60,149 @@ app.post("/pdf", function(req, res) {
 			{font:pdfWriter.getFontForFile('Times New Roman Bold.ttf'),size:10,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnofn[value*25+0],
+			regnofn[value*nosph+0],
 			170, 260,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnofn[value*25+1],
-			170, 205,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnofn[value*25+2],
-			170, 146,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnofn[value*25+3],
+			regnofn[value*nosph+1],
 			170, 233,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnofn[value*25+4],
+			regnofn[value*nosph+2],
+			170, 205,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnofn[value*nosph+3],
 			170, 175,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnofn[value*25+5],
+			regnofn[value*nosph+4],
+			170, 146,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnofn[value*nosph+5],
 			295, 260,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnofn[value*25+6],
-			295, 205,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnofn[value*25+7],
-			295, 146,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnofn[value*25+8],
+			regnofn[value*nosph+6],
 			295, 233,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnofn[value*25+9],
+			regnofn[value*nosph+7],
+			295, 205,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnofn[value*nosph+8],
 			295, 175,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnofn[value*25+10],
+			regnofn[value*nosph+9],
+			295, 146,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnofn[value*nosph+10],
 			425, 260,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnofn[value*25+11],
-			425, 205,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnofn[value*25+12],
-			425, 146,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnofn[value*25+13],
+			regnofn[value*nosph+11],
 			425, 233,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnofn[value*25+14],
-			420, 175,
+			regnofn[value*nosph+12],
+			425, 205,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnofn[value*25+15],
+			regnofn[value*nosph+13],
+			425, 175,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnofn[value*nosph+14],
+			420, 146,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnofn[value*nosph+15],
 			555, 260,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnofn[value*25+16],
-			555, 205,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnofn[value*25+17],
-			555, 146,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnofn[value*25+18],
+			regnofn[value*nosph+16],
 			555, 233,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnofn[value*25+19],
+			regnofn[value*nosph+17],
+			555, 205,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnofn[value*nosph+18],
 			555, 175,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnofn[value*25+20],
+			regnofn[value*nosph+19],
+			555, 146,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnofn[value*nosph+20],
 			685, 260,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnofn[value*25+21],
-			685, 205,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnofn[value*25+22],
-			685, 146,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnofn[value*25+23],
+			regnofn[value*nosph+21],
 			685, 233,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnofn[value*25+24],
+			regnofn[value*nosph+22],
+			685, 205,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnofn[value*nosph+23],
 			685, 175,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
+		if (nosph >= 25)
+		{
+		context.writeText(
+			regnofn[value*nosph+24],
+			685, 146,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		if (nosph >= 26)
+		{
+		context.writeText(
+			regnofn[value*nosph+25],
+			170, 290,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		if (nosph >= 27)
+		{
+		context.writeText(
+			regnofn[value*nosph+26],
+			685, 290,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		}
+		}
+		}
 		pageModifier.endContext().writePage();
 		pdfWriter.end();
 	});
@@ -202,130 +229,149 @@ app.post("/pdf", function(req, res) {
 			{font:pdfWriter.getFontForFile('Times New Roman Bold.ttf'),size:10,colorspace:'black',color:'black'}
 		);		
 		context.writeText(
-			regnoan[value*25+0],
+			regnoan[value*nospha+0],
 			170, 260,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnoan[value*25+1],
-			170, 205,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnoan[value*25+2],
-			170, 146,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnoan[value*25+3],
+			regnoan[value*nospha+1],
 			170, 233,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnoan[value*25+4],
+			regnoan[value*nospha+2],
+			170, 205,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnoan[value*nospha+3],
 			170, 175,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnoan[value*25+5],
+			regnoan[value*nospha+4],
+			170, 146,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnoan[value*nospha+5],
 			295, 260,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnoan[value*25+6],
-			295, 205,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnoan[value*25+7],
-			295, 146,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnoan[value*25+8],
+			regnoan[value*nospha+6],
 			295, 233,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnoan[value*25+9],
+			regnoan[value*nospha+7],
+			295, 205,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnoan[value*nospha+8],
 			295, 175,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnoan[value*25+10],
+			regnoan[value*nospha+9],
+			295, 146,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnoan[value*nospha+10],
 			425, 260,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnoan[value*25+11],
-			425, 205,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnoan[value*25+12],
-			425, 146,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnoan[value*25+13],
+			regnoan[value*nospha+11],
 			425, 233,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnoan[value*25+14],
-			420, 175,
+			regnoan[value*nospha+12],
+			425, 205,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnoan[value*25+15],
+			regnoan[value*nospha+13],
+			425, 175,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnoan[value*nospha+14],
+			420, 146,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnoan[value*nospha+15],
 			555, 260,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnoan[value*25+16],
-			555, 205,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnoan[value*25+17],
-			555, 146,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnoan[value*25+18],
+			regnoan[value*nospha+16],
 			555, 233,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnoan[value*25+19],
+			regnoan[value*nospha+17],
+			555, 205,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnoan[value*nospha+18],
 			555, 175,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnoan[value*25+20],
+			regnoan[value*nosph+19],
+			555, 146,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnoan[value*nospha+20],
 			685, 260,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnoan[value*25+21],
-			685, 205,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnoan[value*25+22],
-			685, 146,
-			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
-		);
-		context.writeText(
-			regnoan[value*25+23],
+			regnoan[value*nospha+21],
 			685, 233,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
 		context.writeText(
-			regnoan[value*25+24],
+			regnoan[value*nospha+22],
+			685, 205,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		context.writeText(
+			regnoan[value*nospha+23],
 			685, 175,
 			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
 		);
+		if (nospha >= 25)
+		{
+		context.writeText(
+			regnoan[value*nospha+24],
+			685, 146,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		if (nospha >= 26)
+		{
+		context.writeText(
+			regnoan[value*nospha+25],
+			170, 290,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		if (nospha >= 27)
+		{
+		context.writeText(
+			regnoan[value*nospha+26],
+			685, 290,
+			{font:pdfWriter.getFontForFile('Times New Roman.ttf'),size:12,colorspace:'black',color:'black'}
+		);
+		}
+		}
+		}
 		pageModifier.endContext().writePage();
 		pdfWriter.end();
 	});
@@ -364,6 +410,9 @@ app.post("/pdf", function(req, res) {
 
 
 app.post("/upload", function(req, res) {
+nosph = req.body.sph;
+nospha = req.body.spha;
+console.log(nosph,nospha);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname + '/public'));
 req.files.sampleFile.mv('try.pdf', function(err) {
@@ -398,17 +447,61 @@ req.files.sampleFile.mv('try.pdf', function(err) {
 		{
 			if(j == 1)
 			{
-			regnofn.push(value);
+			regnofnf.push(value);
 			}
 			else
 			{
-			regnoan.push(value);
+			regnoanf.push(value);
 			}
 		}
 
 });
-		fnlen = Math.floor(regnofn.length/25)+1;
-		anlen = Math.floor(regnoan.length/25)+1;
+		regnofnf.forEach(function(value){
+		if(Math.floor(value/1000)%1000 == 104)
+		cse.push(value);
+		if(Math.floor(value/1000)%1000 == 105)
+		eee.push(value);
+		if(Math.floor(value/1000)%1000 == 106)
+		ece.push(value);
+		if(Math.floor(value/1000)%1000 == 114)
+		mech.push(value);
+		});
+		for(i=0;i<regnofnf.length;i++)
+		{
+			if(cse[i] != undefined)
+			regnofn.push(cse[i]);
+			if(eee[i] != undefined)
+			regnofn.push(eee[i]);
+			if(ece[i] != undefined)
+			regnofn.push(ece[i]);
+			if(mech[i] != undefined)
+			regnofn.push(mech[i]);
+		}
+		cse = [];eee = [];ece = [];mech = [];
+		regnoanf.forEach(function(value){
+		if(Math.floor(value/1000)%1000 == 104)
+		cse.push(value);
+		if(Math.floor(value/1000)%1000 == 105)
+		eee.push(value);
+		if(Math.floor(value/1000)%1000 == 106)
+		ece.push(value);
+		if(Math.floor(value/1000)%1000 == 114)
+		mech.push(value);
+		});
+		for(i=0;i<regnoanf.length;i++)
+		{
+			if(cse[i] != undefined)
+			regnoan.push(cse[i]);
+			if(eee[i] != undefined)
+			regnoan.push(eee[i]);
+			if(ece[i] != undefined)
+			regnoan.push(ece[i]);
+			if(mech[i] != undefined)
+			regnoan.push(mech[i]);
+		}
+		console.log(regnofn,regnoan);
+		fnlen = Math.floor(regnofn.length/nosph)+1;
+		anlen = Math.floor(regnoan.length/nospha)+1;
 		ehfn = fnlen;
 		ehan = anlen;
 		res.render('pdfform',{nfn:ehfn,nan:ehan});
@@ -420,12 +513,15 @@ req.files.sampleFile.mv('try.pdf', function(err) {
 		{
 			ano.push(i);
 		}
-		for(var i=0;i<25;i++)
+		for(var i=0;i<nosph;i++)
 		 {
-			if(regnofn[Math.max.apply(null,pno)*25+i] == undefined)
-				regnofn[Math.max.apply(null,pno)*25+i] = "";
-			if(regnoan[Math.max.apply(null,ano)*25+i] == undefined)
-				regnoan[Math.max.apply(null,ano)*25+i] = "";  
+			if(regnofn[Math.max.apply(null,pno)*nosph+i] == undefined)
+				regnofn[Math.max.apply(null,pno)*nosph+i] = "";
+		  }		
+		for(var i=0;i<nosph;i++)
+		 {
+			if(regnoan[Math.max.apply(null,ano)*nospha+i] == undefined)
+				regnoan[Math.max.apply(null,ano)*nospha+i] = "";  
 		 }
 				 
 }
