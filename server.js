@@ -406,6 +406,7 @@ app.post("/pdf", function(req, res) {
 	regnoanf = [];
 	pno = [];
 	ano = [];
+	cse = [];eee = [];ece = [];mech = [];
 	fnlen = null;
 	anlen = null;
 });
